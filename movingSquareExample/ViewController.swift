@@ -25,11 +25,27 @@ class ViewController: UIViewController {
        imageView.frame.origin.y = -imageView.frame.size.height
        self.moveSquare(imageView,speeds)
        })
+        
     }
-
+    
     override func viewDidAppear(_ animated: Bool)
     {
         moveSquare(squareImg, 30)
     }
-}
+    
+    
+    @IBAction func moveBtn(_ sender: UIButton)
+    {
+        
+        squareImg.center=CGPoint(x: squareImg.center.x-500, y: squareImg.center.y)
+                      UIView.animate(withDuration: 6) {
+                          self.squareImg.center=CGPoint(x: self.squareImg.center.x+2000, y: self.squareImg.center.y)
+                      }
+            
+            }
+        }
+    
+
+
+
 
